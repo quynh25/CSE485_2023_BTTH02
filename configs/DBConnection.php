@@ -1,18 +1,22 @@
 <?php
 
-class DBConnection{
-    private $conn=null;
+class Database{
+    private $host="localhost";
+    private $username="root";
+    private $password="";
+    private $database="btth01_cse485";
 
-    public function __construct(){
-         // B1. Kết nối DB Server
-         try {
-            $this->conn = new PDO('mysql:host=localhost;dbname=demo_;port=3306', 'root','');
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+    private $conn = NULL;
+    private $result = NULL;
+    public function connect(){
+        $this->conn= new mysqli($this->host, $this->username, $this->password, $this->database);
+        if(!$this->conn){
+            echo "ket noi that bai";
+            exit();
         }
-    }
-
-    public function getConnection(){
+        else{
+            mysqli_set_charset($this->conn,'utf8');
+        }
         return $this->conn;
     }
 
