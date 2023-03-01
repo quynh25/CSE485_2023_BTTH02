@@ -7,9 +7,7 @@ class ArticleService{
     //    $dbConn = new DBConnection();
     //    $conn = $dbConn->getConnection();
 
-    //     // B2. Truy vấn
-    //     $sql = "SELECT * FROM article INNER JOIN category ON article.category_id=category.id";
-    //     $stmt = $conn->query($sql);
+
 
     //     // B3. Xử lý kết quả
     //     $articles = [];
