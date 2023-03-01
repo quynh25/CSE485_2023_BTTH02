@@ -8,7 +8,8 @@ class ArticleService{
        $conn = $dbConn->getConnection();
 
         // B2. Truy vấn
-        $sql = "SELECT * FROM article INNER JOIN category ON article.category_id=category.id";
+        $sql = "SELECT * FROM baiviet INNER JOIN theloai ON baiviet.ma_tloai=theloai.ma_tloai 
+                INNER JOIN tacgia on baiviet.ma_bviet=tacgia.ma_tgia";
         $stmt = $conn->query($sql);
 
         // B3. Xử lý kết quả
