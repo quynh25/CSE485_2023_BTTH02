@@ -39,7 +39,7 @@
 
     </header>
     <main class="container mt-5">
-           <?php
+            <?php
                 foreach($data as $value){
 
             ?>

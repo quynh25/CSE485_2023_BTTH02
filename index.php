@@ -1,5 +1,5 @@
 <?php
-include "configs/DB_home.php";
+include "models/Member.php";
 $db = new Database;
 $db-> connect();
 
