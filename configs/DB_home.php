@@ -36,7 +36,7 @@ class Database{
     }
     // phuong thuc lay toan bo dulieu
     public function getAllData($table){
-        $sql = "SELECT * FROM `$table` ";
+        $sql = "SELECT * FROM $table ";
         $this->execute($sql);
         if($this->num_rows()== 0){
             $data =0;

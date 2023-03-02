@@ -16,8 +16,15 @@ $thanhcong = array();
          break;
      }
      case 'detail':{
-          require_once('views/home/detail.php');
-          break;
-      }
+        $tbltenbang = "baiviet INNER JOIN tacgia
+        ON tacgia.ma_tgia = baiviet.ma_tgia
+        INNER JOIN theloai
+        ON baiviet.ma_tloai = theloai.ma_tloai
+        ";
+        $data = $db->getAllData($tbltenbang);   
+
+        require_once('views/home/detail.php');
+        break;
+    }
  }
 ?>
