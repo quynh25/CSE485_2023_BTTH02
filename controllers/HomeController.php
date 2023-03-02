@@ -1,12 +1,23 @@
 <?php
-include("services/ArticleService.php");
-class HomeController{
-    // Hàm xử lý hành động index
-    public function index(){
-        // Nhiệm vụ 1: Tương tác với Services/Models
-        $articelService = new ArticleService();
-        $articles = $articelService->getAllArticles();
-        // Nhiệm vụ 2: Tương tác với View
-        include("views/home/index.php");
-    }
-}
+if(isset($_GET['action'])){
+     $action = $_GET['action'];
+ }
+ else{
+     $action = '';
+ }
+
+$thanhcong = array();
+
+ switch($action){
+     case 'trangchu':{   
+         $tbltenbang = "baiviet";
+         $data = $db->getAllData($tbltenbang); 
+         require_once('views/home/index.php');
+         break;
+     }
+     case 'detail':{
+          require_once('views/home/detail.php');
+          break;
+      }
+ }
+?>
