@@ -108,13 +108,13 @@
                         <span class="input-group-text" id="lblCatName">Tóm tắt</span>
                         <input type="text" class="form-control" name="tomtat" required >
                         <!-- <div type="text"id="tomtat"name="tomtat"class="form-control"></div> -->
-                        <script>
+                        <!-- <script>
                             ClassicEditor
                                 .create( document.querySelector( '#tomtat' ) )
                                 .catch( error => {
                                     console.error( error );
                                 } );
-                        </script>
+                        </script> -->
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Nội dung</span>
@@ -134,11 +134,8 @@
                               <?php
                                    while( $row_tgia = $result_tgia->fetch_assoc()){?>
                                         <option value="<?php echo $row_tgia['ma_tgia']?>"><?php echo $row_tgia['ten_tgia']?></option>
-                                   <?php
-                                   }
-                                   ?>
+                                   <?php  } ?>
                              
-                       
                         </select>
                     </div>
                     <div class="input-group mt-3 mb-3">
