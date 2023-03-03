@@ -1,4 +1,5 @@
 <?php
+include "models/Article.php";
 include "models/Member.php";
 $db = new Database;
 $db-> connect();
@@ -12,6 +13,9 @@ else{
 switch($controller){
     case 'home':{
         require_once('controllers/HomeController.php');
+    }
+    case 'article':{
+        require_once('controllers/ArticleController.php');
     }
 }
 

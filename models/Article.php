@@ -4,31 +4,11 @@ class Database{
     private $conn=null;
     private $result=null;
     private $hostname = 'localhost';
-    private $username = 'root';;
+    private $username = 'root';
     private $pass = '';
     private $dbname = 'btth01_cse485';
-    // public function __construct(){
-    //      // B1. Kết nối DB Server
-    //      try {
-    //         $this->conn = new PDO('mysql:host=localhost;dbname=btth01_cse485;port=3306', 'root','');
-    //     } catch (PDOException $e) {
-    //         echo $e->getMessage();
-    //     }
-    // }
-    // public function getConnection(){
-    //     return $this->conn;
-    // }
-
-    // lấy dữ liệu
-    // public function select($sql){
-    //     $result = $this->conn->query($sql);
-    //     if($result->num_rows >0){
-    //         return $result;
-    //     }else{
-    //         return false;
-    //     }
-    // }
-
+    private $conn = null;
+    private $result = null;
     public function connect(){
         $this->conn = new mysqli($this->hostname$this->username,$this->pass,$this->dbname);
         if(!$this->conn){
@@ -44,15 +24,7 @@ class Database{
        $this->result = $this->conn->query($sql);
        return $this->result;
     }
-    // thêm sửa xóa dữ liệu
-    // public function execute($sql){
-    //     $result = $this->conn->query($sql);
-    //     if($result){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+    
     //phương thức lấy dữ liệu
     public function getData(){
         if($this->result){

@@ -31,6 +31,7 @@
         $action ='';
     }
 
+    $thanhcong = array();
     switch($action){
         case 'list_article':
             require_once('views/article/list_article.php');
@@ -46,7 +47,9 @@
                 $ngay = $_POST['ngay'];
                 $anh = $_FILE['anh'];
 
-                $db->InsertData($tieude, $tenbhat, $matgia, $tomtat, $noidung, $matgia,$ngay,$anh);
+                if($db->InsertData($tieude, $tenbhat, $matgia, $tomtat, $noidung, $matgia,$ngay,$anh)){
+                    $thanhcong = 'add_success';
+                };
             }
             require_once('views/article/add_article.php');
             break;
@@ -56,5 +59,9 @@
         case 'delete':
             require_once('views/article/del_article.php');
             break;
+        default:{
+            require_once('views/article/list_article.php');
+            break;
+        }
     }
 ?>
