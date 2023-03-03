@@ -29,8 +29,20 @@ if(isset($_GET['action'])){
         break;
     }
     case 'login':{
-        $tbltenbang = "users";
-        $data = $db->getAllData($tbltenbang); 
+        
+        if($_POST){
+            $user_name = $_POST['uname'];
+            $pass= $_POST['password'];
+            $tbltenbang = "users where tendn = '$user_name' and matkhau = '$pass'";
+            $data = $db->getAllData($tbltenbang); 
+            if($data){
+              header("Location: index.php?controller=home&action=admin");
+
+            }else{
+              echo '<p style = "color: red">Tên đăng nhập hoặc mật khẩu không đúng!</p>';
+                
+            }
+        }
         require_once('views/home/login.php');
         break;
     }
