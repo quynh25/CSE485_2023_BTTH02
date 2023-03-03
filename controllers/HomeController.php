@@ -47,6 +47,18 @@ if(isset($_GET['action'])){
         break;
     }
     case 'admin':{
+        $tblusers = "users";
+        $count_users = $db->getCount($tblusers); 
+
+        $tbltheloai = "theloai";
+        $count_theloai = $db->getCount($tbltheloai); 
+
+        $tbltacgia = "tacgia";
+        $count_tacgia = $db->getCount($tbltacgia);
+        
+        $tblbaiviet = "baiviet";
+        $count_baiviet = $db->getCount($tblbaiviet); 
+
         require_once('views/admin/index.php');
         break;
     }

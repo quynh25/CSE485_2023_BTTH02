@@ -22,10 +22,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold" aria-current="page" href="./">Trang chủ</a>
+                        <a class="nav-link active fw-bold" aria-current="page" href="index.php?controller=home&action=admin">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Trang ngoài</a>
+                        <a class="nav-link" href="index.php?controller=home&action=trangchu">Trang ngoài</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="category.php">Thể loại</a>
@@ -53,7 +53,7 @@
                         </h5>
 
                         <h5 class="h1 text-center">
-                            110
+                            <?php echo $count_users?>
                         </h5>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                         </h5>
 
                         <h5 class="h1 text-center">
-                            10
+                           <?php echo $count_theloai?>
                         </h5>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         </h5>
 
                         <h5 class="h1 text-center">
-                            20
+                            <?php echo $count_tacgia?>
                         </h5>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                         </h5>
 
                         <h5 class="h1 text-center">
-                            110
+                            <?php echo $count_baiviet?>
                         </h5>
                     </div>
                 </div>
