@@ -58,7 +58,14 @@ class Database{
         return $num;
     }
 
-   
+    public function getCount(string $table)
+    {
+        $sql = "SELECT COUNT(*) AS so_luong FROM  $table ";
+        $this->execute($sql);
+        $row =  $this->getData();
+        return $row['so_luong'];
+    }
+ 
 
 
 }
