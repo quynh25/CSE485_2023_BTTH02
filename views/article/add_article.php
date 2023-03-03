@@ -156,6 +156,11 @@
                         <a href="article.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
+                <?php
+                    if(isset($thanhcong)&& in_array('add_success', $thanhcong)){
+                        echo "<p style='color:green; text-align:center;'>Thêm mới thành công.</p>";
+                    }
+                ?>
             </div>
         </div>
     </main>
