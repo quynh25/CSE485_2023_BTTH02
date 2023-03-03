@@ -17,12 +17,12 @@ if(isset($_GET['action'])){
          break;
      }
      case 'detail':{
-        // $ma_bviet = $_GET['ma_bviet'];
+        $ma_bviet = $_GET['ma_bviet'];
         $tbltenbang = "baiviet INNER JOIN tacgia
         ON tacgia.ma_tgia = baiviet.ma_tgia
         INNER JOIN theloai
         ON baiviet.ma_tloai = theloai.ma_tloai
-         ";
+        where ma_bviet = $ma_bviet ";
         $data = $db->getAllData($tbltenbang);   
 
         require_once('views/home/detail.php');
