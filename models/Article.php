@@ -90,7 +90,7 @@ class Database{
     // Xóa dữ liệu
     public function Delete($ma_bviet){
         $sql = "delete from baiviet where ma_bviet = '$ma_bviet'";
-        return $this->execute($sql);
+        return $this->execute($sql);   
     }
 }
 ?>
