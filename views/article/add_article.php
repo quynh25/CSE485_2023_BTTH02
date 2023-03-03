@@ -83,7 +83,7 @@
 
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới bài viết</h3>
-                <form action="add_article.php" method="post" enctype="multipart/form-data">
+                <form action="" method="post" >
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tiêu đề</span>
                         <input type="text" class="form-control" name="tieude" required >
@@ -134,8 +134,11 @@
                               <?php
                                    while( $row_tgia = $result_tgia->fetch_assoc()){?>
                                         <option value="<?php echo $row_tgia['ma_tgia']?>"><?php echo $row_tgia['ten_tgia']?></option>
-                                   <?php  } ?>
+                                   <?php
+                                   }
+                                   ?>
                              
+                       
                         </select>
                     </div>
                     <div class="input-group mt-3 mb-3">
@@ -149,7 +152,7 @@
 
                     <div class="form-group  float-end ">
                          <!-- <button name = "sbm" class="btn btn-success">Thêm</button> -->
-                        <input type="submit" name = "sbm" value="Thêm" class="btn btn-success">
+                        <input type="submit" name = "add_bviet" value="Thêm" class="btn btn-success">
                         <a href="article.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
