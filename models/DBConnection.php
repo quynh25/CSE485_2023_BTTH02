@@ -56,22 +56,22 @@ class DB {
 
     //Phương thức thêm dữ liệu
 
-    public function insertData( $ma_tgia, $ten_tgia, $hinh_tgia ) {
-        $sql = "INSERT INTO tacgia(matgia, ten_tgia, hinh_tgia)VALUES(NULL,'$ten_tgia','$hinh_tgia')";
+    public function insertData($tentgia, $hinhtgia ) {
+        $sql = "INSERT INTO tacgia(ma_tgia, ten_tgia, hinh_tgia)VALUES(NULL,'$tentgia','$hinhtgia')";
         return $this->execute( $sql );
     }
 
     //Phương thức sửa dữ liệu
 
-    public function updateData( $ma_tgia, $ten_tgia, $hinh_tgia ) {
-        $sql = "UPDATE tacgia SET ten_tgia='$ten_tgia', hinh_tgia='$hinh_tgia' WHERE ma_tgia='$ma_tgia'";
+    public function updateData( $matgia, $tentgia, $hinhtgia ) {
+        $sql = "UPDATE tacgia SET ten_tgia='$tentgia', hinh_tgia='$hinhtgia' WHERE ma_tgia='$matgia'";
         return $this->execute( $sql );
     }
 
     //Phương thức xóa dữ liệu
 
-    public function deleteData( $ma_tgia ) {
-        $sql = "DELETE FORM tacgia WHERE ma_tgia='$ma_tgia'";
+    public function deleteData( $matgia ) {
+        $sql = "DELETE FORM tacgia WHERE ma_tgia='$matgia'";
         return $this->execute( $sql );
     }
 
