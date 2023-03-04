@@ -7,7 +7,7 @@ if(isset($_GET['action'])){
      $action = '';
  }
 
-// $thanhcong = array();
+// $thatbai = array();
 
  switch($action){
      case 'trangchu':{   
@@ -30,7 +30,7 @@ if(isset($_GET['action'])){
     }
     case 'login':{
         
-        if($_POST){
+        if(isset($_POST['submit'])){
             $user_name = $_POST['uname'];
             $pass= $_POST['password'];
             $tbltenbang = "users where tendn = '$user_name' and matkhau = '$pass'";
@@ -39,8 +39,7 @@ if(isset($_GET['action'])){
               header("Location: index.php?controller=home&action=admin");
 
             }else{
-              echo '<p style = "color: red">Tên đăng nhập hoặc mật khẩu không đúng!</p>';
-                
+                $thatbai = "thatbai";
             }
         }
         require_once('views/home/login.php');
