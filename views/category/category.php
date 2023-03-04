@@ -42,6 +42,9 @@
         </nav>
 
     </header>
+    <?php
+    require_once("configs/DBConnection.php");
+    ?>
     <main class="container mt-5 mb-5">
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
@@ -57,27 +60,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                        while($row = $result->fetch_assoc()){
+                    ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Nhạc trữ tình</td>
+                            <th><?php echo $row['ma_tloai']?></th>
+                            <th><?php echo $row['ten_tloai']?></th>
                             <td>
-                                <a href="edit_category.php?id=1"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="edit_category.php?id=<?php echo $row['ma_tloai']; ?>" id ="btnEdit" ><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
                             <td>
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                <a href="process_delete_category.php?id=<?php echo $row['ma_tloai']; ?>" id ="btnDelete" ><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Nhạc cách mạng</td>
-                            <td>
-                                <a href="edit_category.php?id=2"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                            <td>
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                       
+                    <?php } ?>   
                     </tbody>
                 </table>
             </div>
