@@ -83,7 +83,7 @@
 
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới bài viết</h3>
-                <form action="add_article.php" method="post" enctype="multipart/form-data">
+                <form action="" method="post" >
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tiêu đề</span>
                         <input type="text" class="form-control" name="tieude" required >
@@ -108,13 +108,13 @@
                         <span class="input-group-text" id="lblCatName">Tóm tắt</span>
                         <input type="text" class="form-control" name="tomtat" required >
                         <!-- <div type="text"id="tomtat"name="tomtat"class="form-control"></div> -->
-                        <script>
+                        <!-- <script>
                             ClassicEditor
                                 .create( document.querySelector( '#tomtat' ) )
                                 .catch( error => {
                                     console.error( error );
                                 } );
-                        </script>
+                        </script> -->
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Nội dung</span>
@@ -152,10 +152,15 @@
 
                     <div class="form-group  float-end ">
                          <!-- <button name = "sbm" class="btn btn-success">Thêm</button> -->
-                        <input type="submit" name = "sbm" value="Thêm" class="btn btn-success">
+                        <input type="submit" name = "add_bviet" value="Thêm" class="btn btn-success">
                         <a href="article.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
+                <?php
+                    if(isset($thanhcong)&& in_array('add_success', $thanhcong)){
+                        echo "<p style='color:green; text-align:center;'>Thêm mới thành công.</p>";
+                    }
+                ?>
             </div>
         </div>
     </main>
