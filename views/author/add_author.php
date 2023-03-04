@@ -1,4 +1,8 @@
-
+<?php
+    include "../../models/DBConnection.php";
+    $db = new Database;
+    $db->connect();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
