@@ -1,6 +1,6 @@
 <?php
-    include '../models/DBConnection.php';
-    $db = new Database;
+    include "../../models/DBConnection.php";
+    $db = new DB;
     $db->connect();
 ?>
 
