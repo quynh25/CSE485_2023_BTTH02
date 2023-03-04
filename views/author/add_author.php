@@ -1,7 +1,4 @@
 <?php
-    include "../../models/DBConnection.php";
-    $db = new Database;
-    $db->connect();
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +34,7 @@
                         <a class="nav-link" href="category.php">Thể loại</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold" href="author.php">Tác giả</a>
+                        <a class="nav-link active fw-bold" href="../index.php?controller=author&action=home">Tác giả</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="article.php">Bài viết</a>
@@ -53,7 +50,7 @@
         <div class="row">
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới tác giả</h3>
-                <form action="process_add_author.php" method="post">
+                <form action="" method="POST">
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên tác giả</span>
                         <input type="text" class="form-control" name="txtName" >

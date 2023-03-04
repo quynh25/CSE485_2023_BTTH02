@@ -1,7 +1,7 @@
 <?php
 include "models/Article.php";
-include 'models/DBConnection.php';
 include "models/Member.php";
+include "models/DBConnection.php";
 $db_article = new Article();
 $db_article->connect();
 
@@ -30,4 +30,4 @@ switch( $controller ) {
     }
 }
 
-?>git
+?>
