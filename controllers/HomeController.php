@@ -7,8 +7,6 @@ if(isset($_GET['action'])){
      $action = '';
  }
 
-// $thatbai = array();
-
  switch($action){
      case 'trangchu':{   
          $tbltenbang = "baiviet";
@@ -28,38 +26,6 @@ if(isset($_GET['action'])){
         require_once('views/home/detail.php');
         break;
     }
-    case 'login':{
-        
-        if(isset($_POST['submit'])){
-            $user_name = $_POST['uname'];
-            $pass= $_POST['password'];
-            $tbltenbang = "users where tendn = '$user_name' and matkhau = '$pass'";
-            $data = $db->getAllData($tbltenbang); 
-            if($data){
-              header("Location: index.php?controller=home&action=admin");
-
-            }else{
-                $thatbai = "thatbai";
-            }
-        }
-        require_once('views/home/login.php');
-        break;
-    }
-    case 'admin':{
-        $tblusers = "users";
-        $count_users = $db->getCount($tblusers); 
-
-        $tbltheloai = "theloai";
-        $count_theloai = $db->getCount($tbltheloai); 
-
-        $tbltacgia = "tacgia";
-        $count_tacgia = $db->getCount($tbltacgia);
-        
-        $tblbaiviet = "baiviet";
-        $count_baiviet = $db->getCount($tblbaiviet); 
-
-        require_once('views/admin/index.php');
-        break;
-    }
+    
  }
 ?>

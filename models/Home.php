@@ -4,7 +4,7 @@ class Database{
     private $host="localhost";
     private $username="root";
     private $password="";
-    private $database="btth01_cse485";
+    private $database="btth02_cse485";
 
     private $conn = NULL;
     private $result = NULL;
