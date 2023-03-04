@@ -37,20 +37,22 @@
             require_once('views/article/list_article.php');
             break;
         case 'add_article':
-            if(isset($_POST['add_arrticle'])){
-                $tieude = $_POST['tieude'];
-                $tenbhat = $_POST['tenbhat'];
-                $matloai = $_POST['matloai'];
-                $tomtat = $_POST['tomtat'];
-                $noidung = $_POST['noidung'];
-                $matgia = $_POST['matgia'];
-                $ngay = $_POST['ngay'];
-                $anh = $_FILE['anh'];
-
-                if($db->InsertData($tieude, $tenbhat, $matgia, $tomtat, $noidung, $matgia,$ngay,$anh)){
-                    $thanhcong = 'add_success';
-                };
-            }
+            // if(isset($_POST['add_arrticle'])){
+            //     $tieude = $_POST['tieude'];
+            //     $tenbhat = $_POST['tenbhat'];
+            //     $matloai = $_POST['matloai'];
+            //     $tomtat = $_POST['tomtat'];
+            //     $noidung = $_POST['noidung'];
+            //     $matgia = $_POST['matgia'];
+            //     $ngay = $_POST['ngay'];
+            //     $anh = $_FILE['anh']['name'];
+            //     $anh_tmp = $_FILES['anh']['tmp_name'];
+                
+            //     if($db_article->InsertData($tieude, $tenbhat, $matgia, $tomtat, $noidung, $matgia,$ngay,$anh)){
+            //         $thanhcong[] = 'add_success';
+            //     };
+            //     move_uploaded_file($hinhanh_tmp,'./images/songs/'.$hinhanh);
+            // }
             require_once('views/article/add_article.php');
             break;
         case 'edit':

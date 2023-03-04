@@ -2,6 +2,8 @@
 include "models/Article.php";
 include 'models/DBConnection.php';
 include "models/Member.php";
+$db_article = new Article();
+$db_article->connect_article();
 $db = new Database;
 $db-> connect();
 
