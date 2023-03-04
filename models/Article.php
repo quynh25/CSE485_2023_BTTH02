@@ -7,9 +7,6 @@ class Article{
     private $username = 'root';
     private $pass = '';
     private $dbname = 'btth01_cse485';
-
-    
-    
     public function connect_article(){
 
     private $conn = null;
