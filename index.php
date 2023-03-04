@@ -1,17 +1,33 @@
 <?php
+include "models/Article.php";
+include "models/Member.php";
+include 'models/DBConnection.php';
 include "models/Home.php";
+$db_article = new Article();
+$db_article->connect();
+
 $db = new Database;
 $db-> connect();
 
-if(isset($_GET['controller'])){
-    $controller = $_GET['controller'];
-}
-else{
+$con = new DB;
+$con->connect();
+
+
+
+if ( isset( $_GET[ 'controller' ] ) ) {
+    $controller = $_GET[ 'controller' ];
+} else {
     $controller = '';
 }
-switch($controller){
+switch( $controller ) {
     case 'home':{
         require_once('controllers/HomeController.php');
+    }
+    case 'article':{
+        require_once('controllers/ArticleController.php');
+    }
+    case 'author':{
+        require_once( 'controllers/author/index.php' );
     }
     case 'member':{
         require_once('controllers/MemberController.php');
