@@ -47,7 +47,7 @@
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
 
-          <?php
+           <?php
                // Bước 01: Kết nối tới DB Server
                $conn = mysqli_connect('localhost','root','','btth01_cse485');
                if(!$conn){
@@ -59,31 +59,16 @@
 
                $sql_tgia = "select * from tacgia";
                $result_tgia = $conn->query($sql_tgia);
-
-              if(isset($_POST['sbm'])){
-               $tieude= $_POST['tieude'];
-               $tenbhat= $_POST['tenbhat'];
-               $matloai= $_POST['matloai'];
-               $tomtat= $_POST['tomtat'];
-               $noidung= $_POST['noidung'];
-               $matgia= $_POST['matgia'];
-               $ngayviet= $_POST['ngay'];
-               $hinhanh = $_FILES['anh']['name'];
-               $hinhanh_tmp = $_FILES['anh']['tmp_name'];
-
-               $sql = "INSERT INTO `baiviet`
-               VALUES(NULL, '$tieude', '$tenbhat', '$matloai', '$tomtat', '$noidung','$matgia','$ngayviet','$hinhanh');";
-
-               $query = mysqli_query($conn,$sql);
-               move_uploaded_file($hinhanh_tmp,'./images/songs/'.$hinhanh);
-               header('Location: article.php');
-              }
-              
-          ?>   
+               
+               $article = new Article();
+               if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
+                    $inser_article = $article->Insertdata($_POST,$_FILE);
+               }
+          ?>    
 
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới bài viết</h3>
-                <form action="" method="post" >
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tiêu đề</span>
                         <input type="text" class="form-control" name="tieude" required >
@@ -106,27 +91,27 @@
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tóm tắt</span>
-                        <input type="text" class="form-control" name="tomtat" required >
-                        <!-- <div type="text"id="tomtat"name="tomtat"class="form-control"></div> -->
-                        <!-- <script>
+                        <!-- <input type="text" class="form-control" name="tomtat" required > -->
+                        <div type="text"id="tomtat"name="tomtat"class="form-control"></div>
+                        <script>
                             ClassicEditor
                                 .create( document.querySelector( '#tomtat' ) )
                                 .catch( error => {
                                     console.error( error );
                                 } );
-                        </script> -->
+                        </script>
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Nội dung</span>
-                        <input type="text" class="form-control" name="noidung"  >
-                        <!-- <div id="noidung"name="noidung" class="form-control"></div> -->
-                        <!-- <script>
+                        <!-- <input type="text" class="form-control" name="noidung"  > -->
+                        <div id="noidung"name="noidung" class="form-control"></div>
+                         <script>
                             ClassicEditor
                                 .create( document.querySelector( '#noidung' ) )
                                 .catch( error => {
                                     console.error( error );
                                 } );
-                        </script> -->
+                        </script>
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên tác giả</span>
@@ -152,7 +137,7 @@
 
                     <div class="form-group  float-end ">
                          <!-- <button name = "sbm" class="btn btn-success">Thêm</button> -->
-                        <input type="submit" name = "add_bviet" value="Thêm" class="btn btn-success">
+                        <input href="index.php?controller=article&action=list_article" type="submit" name = "add_article" value="Thêm" class="btn btn-success">
                         <a href="article.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
