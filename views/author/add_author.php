@@ -56,7 +56,7 @@
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Ảnh tác giả</span>
-                        <input type="file"name="hinh_tgia">
+                        <input type="text" class="form-control" name="txtLink" >
                     </div>
 
                     <div class="form-group  float-end ">

@@ -12,7 +12,7 @@
     if (isset($_POST["insert"])){
         $matgia = NULL;
         $tentgia = $_POST["txtName"];
-        $hinhtgia = NULL;
+        $hinhtgia = $_POST["txtLink"];
 
         $sql="INSERT INTO tacgia VALUES ('$matgia','$tentgia','$hinhtgia')";
         if (mysqli_query($conn, $sql)){
