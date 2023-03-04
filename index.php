@@ -1,6 +1,5 @@
 <?php
 include "models/Article.php";
-include "models/Member.php";
 include 'models/DBConnection.php';
 include "models/Home.php";
 $db_article = new Article();
