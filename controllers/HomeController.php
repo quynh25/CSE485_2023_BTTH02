@@ -7,7 +7,7 @@ if(isset($_GET['action'])){
      $action = '';
  }
 
-// $thanhcong = array();
+// $thatbai = array();
 
  switch($action){
      case 'trangchu':{   
@@ -17,24 +17,47 @@ if(isset($_GET['action'])){
          break;
      }
      case 'detail':{
-        // $ma_bviet = $_GET['ma_bviet'];
+        $ma_bviet = $_GET['ma_bviet'];
         $tbltenbang = "baiviet INNER JOIN tacgia
         ON tacgia.ma_tgia = baiviet.ma_tgia
         INNER JOIN theloai
         ON baiviet.ma_tloai = theloai.ma_tloai
-         ";
+        where ma_bviet = $ma_bviet ";
         $data = $db->getAllData($tbltenbang);   
 
         require_once('views/home/detail.php');
         break;
     }
     case 'login':{
-        $tbltenbang = "users";
-        $data = $db->getAllData($tbltenbang); 
+        
+        if(isset($_POST['submit'])){
+            $user_name = $_POST['uname'];
+            $pass= $_POST['password'];
+            $tbltenbang = "users where tendn = '$user_name' and matkhau = '$pass'";
+            $data = $db->getAllData($tbltenbang); 
+            if($data){
+              header("Location: index.php?controller=home&action=admin");
+
+            }else{
+                $thatbai = "thatbai";
+            }
+        }
         require_once('views/home/login.php');
         break;
     }
     case 'admin':{
+        $tblusers = "users";
+        $count_users = $db->getCount($tblusers); 
+
+        $tbltheloai = "theloai";
+        $count_theloai = $db->getCount($tbltheloai); 
+
+        $tbltacgia = "tacgia";
+        $count_tacgia = $db->getCount($tbltacgia);
+        
+        $tblbaiviet = "baiviet";
+        $count_baiviet = $db->getCount($tblbaiviet); 
+
         require_once('views/admin/index.php');
         break;
     }

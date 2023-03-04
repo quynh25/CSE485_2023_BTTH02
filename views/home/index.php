@@ -76,7 +76,7 @@
                         <img src="<?php echo $value['hinhanh'];?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">
-                                <a href="index.php?controller=home&action=detail?ma_bviet=<?php echo $value['ma_bviet']?>" class="text-decoration-none"><?php echo $value['ten_bhat'];?></a>
+                                <a href="index.php?controller=home&action=detail&ma_bviet=<?php echo $value['ma_bviet']?>" class="text-decoration-none"><?php echo $value['ten_bhat'];?></a>
                             </h5>
                         </div>
                     </div>

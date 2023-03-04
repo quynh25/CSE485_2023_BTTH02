@@ -46,7 +46,7 @@
         $host="localhost";
         $username="root";
         $password="";
-        $database="btth01_cse485";
+        $database="btth02_cse485";
         $conn=mysqli_connect($host,$username,$password,$database);
         mysqli_query($conn,"SET NAMES 'utf8'");
         if (mysqli_connect_error()){

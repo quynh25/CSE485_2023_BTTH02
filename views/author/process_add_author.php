@@ -2,7 +2,8 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $conn = new mysqli($servername, $username, $password,'btth01_cse485');
+    $database = "btth02_cse485";
+    $conn = new mysqli($servername, $username, $password,$database);
 
     // Check connection
     if ($conn->connect_error) {
@@ -12,7 +13,7 @@
     if (isset($_POST["insert"])){
         $matgia = NULL;
         $tentgia = $_POST["txtName"];
-        $hinhtgia = NULL;
+        $hinhtgia = $_POST["txtLink"];
 
         $sql="INSERT INTO tacgia VALUES ('$matgia','$tentgia','$hinhtgia')";
         if (mysqli_query($conn, $sql)){
