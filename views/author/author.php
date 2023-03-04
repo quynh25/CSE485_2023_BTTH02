@@ -1,17 +1,7 @@
 <?php
-$host="localhost";
-$username="root";
-$password="";
-$database="btth02_cse485";
-$conn = mysqli_connect($host,$username,$password,$database);
-mysqli_query($conn,"SET NAMES 'utf8'");
-if (mysqli_connect_error()){
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-$sql = "SELECT * FROM tacgia";
-$result = mysqli_query($conn,$sql);
-
-
+    include '../models/DBConnection.php';
+    $db = new Database;
+    $db->connect();
 ?>
 
 <!DOCTYPE html>
