@@ -26,7 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="index.php?controller=home&action=trangchu">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="index.php?controller=home&action=login">Đăng nhập</a>
+                    <a class="nav-link" href="index.php?controller=member&action=login">Đăng nhập</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">

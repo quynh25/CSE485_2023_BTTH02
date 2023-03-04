@@ -1,7 +1,8 @@
 <?php
 include "models/Article.php";
 include "models/Member.php";
-include "models/DBConnection.php";
+include 'models/DBConnection.php';
+include "models/Home.php";
 $db_article = new Article();
 $db_article->connect();
 
@@ -27,6 +28,9 @@ switch( $controller ) {
     }
     case 'author':{
         require_once( 'controllers/author/index.php' );
+    }
+    case 'member':{
+        require_once('controllers/MemberController.php');
     }
 }
 

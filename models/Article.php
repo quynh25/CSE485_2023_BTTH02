@@ -6,7 +6,7 @@ class Article {
     private $hostname = 'localhost';
     private $username = 'root';
     private $pass = '';
-    private $dbname = 'btth01_cse485';
+    private $dbname = 'btth02_cse485';
 
     public function connect() {
         $this->conn = new mysqli( $this->hostname, $this->username, $this->pass, $this->dbname );
@@ -72,5 +72,8 @@ class Article {
 
     }
 }
+
+
+
 
 ?>
