@@ -3,8 +3,11 @@
 include 'models/DBConnection.php';
 include "models/Member.php";
 include "models/Article.php";
-    $db_article = new Article();
-    $db_article->connect();
+$db_article = new Article();
+$db_article->connect();
+include "models/Home.php";
+$db_article = new Article();
+$db_article->connect();
 
 $db = new Database;
 $db-> connect();
@@ -31,6 +34,9 @@ switch( $controller ) {
     case 'author':{
         require_once( 'controllers/author/index.php' );
         break;
+    }
+    case 'member':{
+        require_once('controllers/MemberController.php');
     }
 }
 
