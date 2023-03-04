@@ -29,6 +29,9 @@ class Article {
     //phương thức lấy dữ liệu
 
     public function getData() {
+        // $sql = "SELECT * FROM $table";
+        // $this->execute($sql)
+
         if ( $this->result ) {
             $data = mysqli_fetch_array( $this->result );
         } else {
