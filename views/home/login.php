@@ -66,8 +66,13 @@
                             <div class="row align-items-center remember">
                                 <input type="checkbox">Remember Me
                             </div>
+                            <?php
+                                if(isset($thatbai)){
+                                    echo '<p style = "color: red">Tên đăng nhập hoặc mật khẩu không đúng!</p>';
+                                }
+                            ?>
                             <div class="form-group">
-                                <input type="submit" value="Login" class="btn float-end login_btn">
+                                <input name ="submit" type="submit" value="Login" class="btn float-end login_btn" >
                             </div>
                         </form>
                     </div>
