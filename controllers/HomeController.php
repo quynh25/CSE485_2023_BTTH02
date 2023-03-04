@@ -7,8 +7,6 @@ if(isset($_GET['action'])){
      $action = '';
  }
 
-// $thatbai = array();
-
  switch($action){
      case 'trangchu':{   
          $tbltenbang = "baiviet";
