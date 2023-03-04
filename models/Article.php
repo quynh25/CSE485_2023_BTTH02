@@ -8,14 +8,6 @@ class Article {
     private $pass = '';
     private $dbname = 'btth02_cse485';
 
-    public function connect_article(){
-
-    private $conn = null;
-    private $result = null;
-    public function connect(){
-        $this->conn = new mysqli($this->hostname,$this->username,$this->pass,$this->dbname);
-        if(!$this->conn){
-            echo "kết nối thất bại";
     public function connect() {
         $this->conn = new mysqli( $this->hostname, $this->username, $this->pass, $this->dbname );
         if ( !$this->conn ) {
@@ -81,6 +73,7 @@ class Article {
     }
 }
 
-}
+
+
 
 ?>
