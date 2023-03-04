@@ -6,10 +6,8 @@ class Article{
     private $hostname = 'localhost';
     private $username = 'root';
     private $pass = '';
-    private $dbname = 'btth01_cse485';
+    private $dbname = 'btth02_cse485';
 
-    
-    
     public function connect_article(){
 
     private $conn = null;
@@ -69,5 +67,6 @@ class Article{
         $sql = "delete from baiviet where ma_bviet = '$ma_bviet'";
         return $this->execute($sql);   
     }
+}
 }
 ?>
