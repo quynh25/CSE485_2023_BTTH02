@@ -10,7 +10,7 @@ class Database{
     private $conn = null;
     private $result = null;
     public function connect(){
-        $this->conn = new mysqli($this->hostname$this->username,$this->pass,$this->dbname);
+        $this->conn = new mysqli($this->hostname,$this->username,$this->pass,$this->dbname);
         if(!$this->conn){
             echo "kết nối thất bại";
             exit();
@@ -29,7 +29,7 @@ class Database{
     public function getData(){
         if($this->result){
             $data = mysqli_fetch_array($this->result);
-        }elsse{
+        }else{
             $data = 0;
         }
         return data;
