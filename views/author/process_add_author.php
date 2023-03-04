@@ -2,7 +2,8 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $conn = new mysqli($servername, $username, $password,'btth01_cse485');
+    $database = "btth02_cse485";
+    $conn = new mysqli($servername, $username, $password,$database);
 
     // Check connection
     if ($conn->connect_error) {

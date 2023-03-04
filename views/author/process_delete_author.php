@@ -1,8 +1,10 @@
 <?php 
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $conn = new mysqli($host, $user, $pass,'btth01_cse485');
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "btth02_cse485";
+    $conn = new mysqli($servername, $username, $password,$database);
+    
     $id = $_GET['id'];
 
     // Check connection
