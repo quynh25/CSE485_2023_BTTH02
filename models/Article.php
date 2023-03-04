@@ -1,16 +1,16 @@
 <?php
 
-class Database{
+class Article{
     private $conn=null;
     private $result=null;
     private $hostname = 'localhost';
     private $username = 'root';
     private $pass = '';
     private $dbname = 'btth01_cse485';
-    private $conn = null;
-    private $result = null;
-    public function connect(){
-        $this->conn = new mysqli($this->hostname$this->username,$this->pass,$this->dbname);
+    
+    
+    public function connect_article(){
+        $this->conn = new mysqli($this->hostname,$this->username,$this->pass,$this->dbname);
         if(!$this->conn){
             echo "kết nối thất bại";
             exit();
@@ -29,7 +29,7 @@ class Database{
     public function getData(){
         if($this->result){
             $data = mysqli_fetch_array($this->result);
-        }elsse{
+        }else{
             $data = 0;
         }
         return data;
@@ -55,7 +55,7 @@ class Database{
     // Sửa dữ liệu
     public function UpdateData($ma_bviet,$tieude,$ten_bhat,$ma_tloai,$tomtat,$noidung,$ma_tgia,$ngayviet,$hinhanh){
         $sql = "UPDATE baiviet set 
-            ma_bviet = 'ma_bviet',tieude = '$tieude','ten_bhat = '$ten_bhat',ma_tloai = '$ma_tloai,tomtat = '$tomtat',noidung = '$noidung',
+            ma_bviet = 'ma_bviet',tieude = '$tieude',ten_bhat = '$ten_bhat',ma_tloai = '$ma_tloai,tomtat = '$tomtat',noidung = '$noidung',
             ma_tgia = '$ma_tgia',ngayviet = '$ngayviet',hinhanh = '$hinhanh' where ma_bviet = '$ma_bviet'";
         return this->execute($sql);
     }
