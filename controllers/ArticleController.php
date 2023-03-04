@@ -24,7 +24,8 @@
 //}
 
     // include "models/Article.php";
-
+    // $db_article = new Article();
+    // $db_article->connect();
     if(isset($_GET['action'])){
         $action = $_GET['action'];
     }else{
@@ -34,25 +35,28 @@
     $thanhcong = array();
     switch($action){
         case 'list_article':
+            $tblTable = "baiviet";
+            $db_article->getData($tblTable);
+            $data = $db_article->getAllData($tblTable);
             require_once('views/article/list_article.php');
             break;
         case 'add_article':
-            // if(isset($_POST['add_arrticle'])){
-            //     $tieude = $_POST['tieude'];
-            //     $tenbhat = $_POST['tenbhat'];
-            //     $matloai = $_POST['matloai'];
-            //     $tomtat = $_POST['tomtat'];
-            //     $noidung = $_POST['noidung'];
-            //     $matgia = $_POST['matgia'];
-            //     $ngay = $_POST['ngay'];
-            //     $anh = $_FILE['anh']['name'];
-            //     $anh_tmp = $_FILES['anh']['tmp_name'];
+            if(isset($_POST['add_arrticle'])){
+                $tieude = $_POST['tieude'];
+                $tenbhat = $_POST['tenbhat'];
+                $matloai = $_POST['matloai'];
+                $tomtat = $_POST['tomtat'];
+                $noidung = $_POST['noidung'];
+                $matgia = $_POST['matgia'];
+                $ngay = $_POST['ngayviet'];
+                $hinhanh = $_FILE['hinhanh']['name'];
+                $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
+                move_uploaded_file($hinhanh_tmp,'assets/images/songs/'.$hinhanh);
+                if($db_article->InsertData($tieude, $tenbhat, $matgia, $tomtat, $noidung, $matgia,$ngayviet,$hinhanh)){
+                    $thanhcong[] = 'add_success';
+                };
                 
-            //     if($db_article->InsertData($tieude, $tenbhat, $matgia, $tomtat, $noidung, $matgia,$ngay,$anh)){
-            //         $thanhcong[] = 'add_success';
-            //     };
-            //     move_uploaded_file($hinhanh_tmp,'./images/songs/'.$hinhanh);
-            // }
+            }
             require_once('views/article/add_article.php');
             break;
         case 'edit':

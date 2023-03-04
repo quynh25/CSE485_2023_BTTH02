@@ -1,6 +1,10 @@
 <?php
-include "models/Article.php";
+// include "services/ArticleService.php";
 include 'models/DBConnection.php';
+include "models/Member.php";
+include "models/Article.php";
+$db_article = new Article();
+$db_article->connect();
 include "models/Home.php";
 $db_article = new Article();
 $db_article->connect();
@@ -21,12 +25,15 @@ if ( isset( $_GET[ 'controller' ] ) ) {
 switch( $controller ) {
     case 'home':{
         require_once('controllers/HomeController.php');
+        break;
     }
-    case 'article':{
+     case 'article':{
         require_once('controllers/ArticleController.php');
-    }
+        break;
+     }
     case 'author':{
         require_once( 'controllers/author/index.php' );
+        break;
     }
     case 'member':{
         require_once('controllers/MemberController.php');

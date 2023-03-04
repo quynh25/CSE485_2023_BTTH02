@@ -128,11 +128,11 @@
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Ngày viết</span>
-                        <input type="date" class="form-control" name="ngay" required>
+                        <input type="date" class="form-control" name="ngayviet" required>
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="name">Hình ảnh</span>
-                        <input type="file" class="form-control" name="anh"  >
+                        <input type="file" class="form-control" name="hinhanh"  >
                     </div>
 
                     <div class="form-group  float-end ">

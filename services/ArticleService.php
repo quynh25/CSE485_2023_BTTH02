@@ -1,7 +1,7 @@
 <?php
-    include "configs/DBConnection_article.php";
-    $db= new Database();
-    $db->connect();
+    // include "configs/DBConnection_article.php";
+    // $db= new Database();
+    // $db->connect();
 
     if(isset($_GET['controller'])){
         $controller = $_GET['controller'];
@@ -12,6 +12,7 @@
     switch($controller){
         case 'article':
             require_once('controllers/ArticleController.php');
+        
     }
 // include "configs/DBConnection_article.php";
 // include("models/Article.php");
