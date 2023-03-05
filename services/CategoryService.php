@@ -1,5 +1,5 @@
 <?php
-require_once('config/database.php');
+require_once('configs/database.php');
 require_once('models/Category.php');
 class CategoryService{
 
