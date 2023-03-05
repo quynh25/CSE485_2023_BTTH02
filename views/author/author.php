@@ -19,23 +19,23 @@ require_once('views/layouts/header_admin.php');
                     </thead>
                     <tbody>
                     <?php
-                    echo  "<pre>";
-                    print_r($data);
+                        foreach($data as $value){
                     ?>
                                 <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
+                                    <th scope="row"><?php echo $value['ma_tgia'];?></th>
+                                    <td><?php echo $value['ten_tgia'];?></td>
                                     <td>
-                                        <img id="img-avt" src="" alt="" style="width:10%">
+                                        <img id="img-avt" src="<?php echo $value['hinh_tgia'];?>" alt="" style="width:10%">
                                     </td>
                                     <td>
-                                        <a href="index.php?controller=author&action=edit"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="index.php?controller=author&action=edit&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                     </td>
                                     <td>
                                         <a href="process_delete_author.php?id"><i class="fa-solid fa-trash"></i></a>
                                     </td>
                                 </tr>
                     <?php
+                    }
                     ?>
                     </tbody>
                 </table>
