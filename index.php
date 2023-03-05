@@ -1,7 +1,6 @@
 <?php
 // include "services/ArticleService.php";
 include 'models/DBConnection.php';
-include "models/Member.php";
 include "models/Article.php";
 $db_article = new Article();
 $db_article->connect();

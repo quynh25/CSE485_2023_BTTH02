@@ -45,30 +45,12 @@
         </nav>
 
     </header>
-    <?php
-        $host="localhost";
-        $username="root";
-        $password="";
-        $database="btth02_cse485";
-        $conn=mysqli_connect($host,$username,$password,$database);
-        mysqli_query($conn,"SET NAMES 'utf8'");
-        if (mysqli_connect_error()){
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        }                    
-        $id = $_GET['id'];
-    ?>
+    
     <main class="container mt-5 mb-5">
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Sửa thông tin tác giả</h3>
-                <?php
-                $sql = "SELECT * FROM tacgia WHERE ma_tgia='$id'";
-                $result = mysqli_query($conn,$sql);
-
-                if(mysqli_num_rows($result)>0){
-                    $row = mysqli_fetch_assoc($result)
-                ?>
                 <form action="process_add_category.php" method="post">
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatId">Mã tác giả</span>
@@ -87,9 +69,6 @@
                         <a href="author.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
-                <?php
-                }
-                ?>
             </div>
         </div>
     </main>

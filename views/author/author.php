@@ -63,8 +63,6 @@
                     </thead>
                     <tbody>
                     <?php
-                        if(mysqli_num_rows($result)>0){
-                            while($row = mysqli_fetch_assoc($result)){
                     ?>
                                 <tr>
                                     <th scope="row"><?php echo $row['ma_tgia']?></th>
@@ -80,8 +78,6 @@
                                     </td>
                                 </tr>
                     <?php
-                            }
-                        }
                     ?>
                     </tbody>
                 </table>
