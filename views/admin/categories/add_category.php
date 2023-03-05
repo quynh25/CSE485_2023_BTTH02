@@ -13,7 +13,7 @@ require_once('C:\xampp\htdocs\GitHub\CSE485_2023_BTTH02\views\layouts\header_adm
                 </div>
                 <div class="form-group  float-end ">
                     <input type="submit" name ="btn" value="Thêm" class="btn btn-success">
-                    <a href="?controller=category" class="btn btn-warning ">Quay lại</a>
+                    <a href="index.php" class="btn btn-warning ">Quay lại</a>
                 </div>
                 <div class="form-group" style="color:red">
                     <?= $_GET['mess'] ?? ""?>
