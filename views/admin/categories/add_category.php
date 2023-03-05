@@ -1,5 +1,5 @@
 <?php
-require_once('views/layouts/header_admin.php');
+require_once('C:\xampp\htdocs\GitHub\CSE485_2023_BTTH02\views\layouts\header_admin.php');
 ?>
 <main class="container mt-5 mb-5">
     <div class="row">
@@ -23,5 +23,5 @@ require_once('views/layouts/header_admin.php');
     </div>
 </main>
 <?php
-require_once('views/layouts/footer.php');
+require_once('C:\xampp\htdocs\GitHub\CSE485_2023_BTTH02\views\layouts\footer.php');
 ?>
