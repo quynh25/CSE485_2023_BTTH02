@@ -8,7 +8,7 @@ class CategoryController
     {
         $categoryService = new CategoryService();
         $categories = $categoryService->getAll('select *from theloai');
-        include("views/admin/categories/index.php");
+        include("views/categories/index.php");
     }
 
     public function add_category()
@@ -26,7 +26,7 @@ class CategoryController
                 header("location:?controller=category&action=add_category&mess=$mess");
             }
         }
-        include("views/admin/categories/add_category.php");
+        include("views/categories/add_category.php");
     }
 
     public function edit_category()
@@ -53,7 +53,7 @@ class CategoryController
                 header("location:?controller=category&action=edit_category&id=$ma_tloai&mess=$mess");
             }
         }
-        include("views/admin/categories/edit_category.php");
+        include("views/categories/edit_category.php");
     }
 
     public function delete_category()
@@ -76,7 +76,7 @@ class CategoryController
                 header("location:?controller=category&action=delete_category&id=$ma_tloai&list_id=$list_id");
             }
         }
-        include("views/admin/categories/delete_category.php");
+        include("views/categories/delete_category.php");
     }
 }
 
