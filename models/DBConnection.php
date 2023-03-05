@@ -74,7 +74,7 @@ class DB {
     //Phương thức xóa dữ liệu
 
     public function deleteData( $matgia ) {
-        $sql = "DELETE FORM tacgia WHERE ma_tgia='$matgia'";
+        $sql = "DELETE FROM tacgia WHERE ma_tgia='$matgia'";
         return $this->execute( $sql );
     }
 

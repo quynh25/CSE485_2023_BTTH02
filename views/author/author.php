@@ -6,6 +6,7 @@ require_once('views/layouts/header_admin.php');
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
+                <h3 class="text-center text-uppercase fw-bold">QUẢN LÝ TÁC GIẢ</h3>
                 <a href="index.php?controller=author&action=add" class="btn btn-success">Thêm mới</a>
                 <table class="table">
                     <thead>
@@ -31,11 +32,11 @@ require_once('views/layouts/header_admin.php');
                                         <a href="index.php?controller=author&action=edit&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                     </td>
                                     <td>
-                                        <a href="process_delete_author.php?id"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="index.php?controller=author&action=del&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-trash"></i></a>
                                     </td>
                                 </tr>
                     <?php
-                    }
+                        }
                     ?>
                     </tbody>
                 </table>
