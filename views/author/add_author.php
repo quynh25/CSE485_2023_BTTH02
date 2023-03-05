@@ -2,7 +2,6 @@
 require_once('views/layouts/header_admin.php');
 ?>
     <main class="container mt-5 mb-5">
-        <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới tác giả</h3>
@@ -23,7 +22,7 @@ require_once('views/layouts/header_admin.php');
                     
                 </form>
                 <?php
-                if(isset($thanhcong)&&in_array('addd_success',$thanhcong)){
+                if(isset($thanhcong)&&in_array('add_success',$thanhcong)){
                     echo "<p style='color: green; text-align: center'>Thêm mới thành công.</p>";
                 }
                 ?>
