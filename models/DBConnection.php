@@ -22,14 +22,17 @@ class DB {
 
     //Thực thi câu lệnh truy vấn
 
-    public function execute() {
+    public function execute($sql) {
         $this->result = $this->conn->query( $sql );
         return $this->result;
     }
 
     //Phương thức lấy dữ liệu
 
-    public function getData() {
+    public function getData($table) {
+        
+        $sql = 'SELECT * FROM $table';
+        $this->execute($sql);
         if ( $this->result ) {
             $data = myspli_fetch_array( $this->result );
         } else {
@@ -40,11 +43,11 @@ class DB {
 
     //Phương thức lấy toàn bộ dữ liệu
 
-    public function getAllData() {
+    public function getAllData($table) {
         if ( !$this->result ) {
             $data = 0;
         } else {
-            while( $data = $this->getData() ) {
+            while( $data = $this->getData($table) ) {
                 $data[] = $datas;
 
             }
