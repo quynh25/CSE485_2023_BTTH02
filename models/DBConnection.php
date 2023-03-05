@@ -29,12 +29,9 @@ class DB {
 
     //Phương thức lấy dữ liệu
 
-    public function getData($table) {
-        
-        $sql = 'SELECT * FROM $table';
-        $this->execute($sql);
+    public function getData() {
         if ( $this->result ) {
-            $data = myspli_fetch_array( $this->result );
+            $data = mysqli_fetch_array( $this->result );
         } else {
             $data = 0;
         }
@@ -43,17 +40,20 @@ class DB {
 
     //Phương thức lấy toàn bộ dữ liệu
 
-    public function getAllData($table) {
-        if ( !$this->result ) {
-            $data = 0;
-        } else {
-            while( $data = $this->getData($table) ) {
-                $data[] = $datas;
+        public function getAllData($table) {
+            $sql = "SELECT * FROM $table ";
+            $this->execute($sql);
 
+            if ( !$this->result ) {
+                $data = 0;
+            } else {
+                while( $datas = $this->getData() ) {
+                    $data[] = $datas;
+
+                }
             }
+            return $data;
         }
-        return $data;
-    }
 
     //Phương thức đếm số bản ghi
 

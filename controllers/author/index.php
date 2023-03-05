@@ -24,12 +24,14 @@ switch( $action ) {
         break;
     }
     case 'edit': {
+        $id = $_GET['id'];
+        $tblTable = "tacgia WHERE ma_tgia= '$id'";
+        $data = $con->getAllData($tblTable);
         require_once( 'views/author/edit_author.php' );
         break;
     }
     case 'home':{
         $tblTable = "tacgia";
-        $con->getData($tblTable);
         $data = $con->getAllData($tblTable);
         require_once( 'views/author/author.php' );
         break;
