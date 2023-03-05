@@ -1,10 +1,11 @@
 <?php
-// include "services/ArticleService.php";
+
 include 'models/DBConnection.php';
+include "models/Home.php";
 include "models/Article.php";
 $db_article = new Article();
 $db_article->connect();
-include "models/Home.php";
+
 $db_article = new Article();
 $db_article->connect();
 
