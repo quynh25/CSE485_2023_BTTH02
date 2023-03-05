@@ -1,5 +1,5 @@
 <?php
-require_once('views/layouts/header_admin.php');
+require_once('C:\xampp\htdocs\GitHub\CSE485_2023_BTTH02\views\layouts\header_admin.php');
 ?>
 <main class="container mt-5 mb-5">
     <div class="row">
@@ -13,7 +13,7 @@ require_once('views/layouts/header_admin.php');
                 </div>
                 <div class="form-group  float-end ">
                     <input type="submit" name ="btn" value="Thêm" class="btn btn-success">
-                    <a href="?controller=category" class="btn btn-warning ">Quay lại</a>
+                    <a href="index.php" class="btn btn-warning ">Quay lại</a>
                 </div>
                 <div class="form-group" style="color:red">
                     <?= $_GET['mess'] ?? ""?>
@@ -23,5 +23,5 @@ require_once('views/layouts/header_admin.php');
     </div>
 </main>
 <?php
-require_once('views/layouts/footer.php');
+require_once('C:\xampp\htdocs\GitHub\CSE485_2023_BTTH02\views\layouts\footer.php');
 ?>

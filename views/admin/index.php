@@ -28,7 +28,7 @@
                         <a class="nav-link" href="index.php?controller=home&action=trangchu">Trang ngoài</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="category.php">Thể loại</a>
+                        <a class="nav-link" href="categories\index.php">Thể loại</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="author.php">Tác giả</a>
