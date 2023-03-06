@@ -22,19 +22,19 @@ require_once('views/layouts/header_admin.php');
                     <?php
                         foreach($data as $value){
                     ?>
-                                <tr>
-                                    <th scope="row"><?php echo $value['ma_tgia'];?></th>
-                                    <td><?php echo $value['ten_tgia'];?></td>
-                                    <td>
-                                        <img id="img-avt" src="<?php echo $value['hinh_tgia'];?>" alt="" style="width:10%">
-                                    </td>
-                                    <td>
-                                        <a href="index.php?controller=author&action=edit&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    </td>
-                                    <td>
-                                        <a href="index.php?controller=author&action=del&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <th scope="row"><?php echo $value['ma_tgia'];?></th>
+                            <td><?php echo $value['ten_tgia'];?></td>
+                            <td>
+                                <img id="img-avt" src="<?php echo $value['hinh_tgia'];?>" alt="" style="width:10%">
+                            </td>
+                            <td>
+                                <a href="index.php?controller=author&action=edit&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                            </td>
+                            <td>
+                                <a href="index.php?controller=author&action=del&id=<?php echo $value['ma_tgia'];?>"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
                     <?php
                         }
                     ?>

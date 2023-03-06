@@ -3,11 +3,11 @@
 include 'models/DBConnection.php';
 include "models/Home.php";
 include "models/Article.php";
-$db_article = new Article();
-$db_article->connect();
+$conn = new Article();
+$conn->connect();
 
-$db_article = new Article();
-$db_article->connect();
+// $db_article = new Article();
+// $db_article->connect();
 
 $db = new Database;
 $db-> connect();
