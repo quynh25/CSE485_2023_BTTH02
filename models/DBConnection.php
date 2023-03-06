@@ -61,6 +61,11 @@ class DB {
         return $this->execute( $sql );
     }
 
+    public function insertTL($tentloai) {
+        $sql = "INSERT INTO tacgia(ma_tloai, ten_tloai)VALUES(NULL,'$tentloai')";
+        return $this->execute( $sql );
+    }
+
     //Phương thức sửa dữ liệu
 
     public function updateData( $matgia, $tentgia, $hinhtgia ) {
@@ -68,10 +73,20 @@ class DB {
         return $this->execute( $sql );
     }
 
+    public function updateTL( $matloai, $tentloai) {
+        $sql = "UPDATE theloai SET ten_tloai='$tentloai' WHERE ma_tloai='$matloai'";
+        return $this->execute( $sql );
+    }
+
     //Phương thức xóa dữ liệu
 
     public function deleteData( $matgia ) {
         $sql = "DELETE FORM tacgia WHERE ma_tgia='$matgia'";
+        return $this->execute( $sql );
+    }
+
+    public function deleteTL( $matloai ) {
+        $sql = "DELETE FROM theloai WHERE ma_tloai='$matloai'";
         return $this->execute( $sql );
     }
 
