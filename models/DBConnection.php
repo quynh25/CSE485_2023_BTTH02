@@ -22,7 +22,7 @@ class DB {
 
     //Thực thi câu lệnh truy vấn
 
-    public function execute() {
+    public function execute($sql) {
         $this->result = $this->conn->query( $sql );
         return $this->result;
     }
@@ -31,7 +31,7 @@ class DB {
 
     public function getData() {
         if ( $this->result ) {
-            $data = myspli_fetch_array( $this->result );
+            $data = mysqli_fetch_array( $this->result );
         } else {
             $data = 0;
         }
@@ -40,17 +40,20 @@ class DB {
 
     //Phương thức lấy toàn bộ dữ liệu
 
-    public function getAllData() {
-        if ( !$this->result ) {
-            $data = 0;
-        } else {
-            while( $data = $this->getData() ) {
-                $data[] = $datas;
+        public function getAllData($table) {
+            $sql = "SELECT * FROM $table ";
+            $this->execute($sql);
 
+            if ( !$this->result ) {
+                $data = 0;
+            } else {
+                while( $datas = $this->getData() ) {
+                    $data[] = $datas;
+
+                }
             }
+            return $data;
         }
-        return $data;
-    }
 
     //Phương thức đếm số bản ghi
 
@@ -81,7 +84,7 @@ class DB {
     //Phương thức xóa dữ liệu
 
     public function deleteData( $matgia ) {
-        $sql = "DELETE FORM tacgia WHERE ma_tgia='$matgia'";
+        $sql = "DELETE FROM tacgia WHERE ma_tgia='$matgia'";
         return $this->execute( $sql );
     }
 

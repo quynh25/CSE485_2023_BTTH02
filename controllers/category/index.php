@@ -47,11 +47,7 @@ switch( $action ) {
                 $thanhcong[] = 'del_success';
             }
         }
-<<<<<<< Updated upstream
-        require_once( 'views/author/del_author.php' );
-=======
         require_once( 'views/categories/delete_category.php' );
->>>>>>> Stashed changes
         break;
     }
     case 'home':{
@@ -62,6 +58,8 @@ switch( $action ) {
  
     }
     default: {
+        $tblTable = "theloai";
+        $data = $con->getAllData($tblTable);
         require_once( 'views/categories/category.php' );
         break;
     }

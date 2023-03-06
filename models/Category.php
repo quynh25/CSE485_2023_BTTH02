@@ -1,6 +1,6 @@
 <?php
 
-class Database{
+class Dtbase{
     private $host="localhost";
     private $username="root";
     private $password="";
@@ -11,7 +11,7 @@ class Database{
     public function connect(){
         $this->conn= new mysqli($this->host, $this->username, $this->password, $this->database);
         if(!$this->conn){
-            echo "ket noi that bai";
+            echo "Ket noi that bai";
             exit();
         }
         else{
