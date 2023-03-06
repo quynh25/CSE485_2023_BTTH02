@@ -47,7 +47,7 @@ switch( $action ) {
                 $thanhcong[] = 'del_success';
             }
         }
-        require_once( 'views/author/del_author.php' );
+        require_once( 'views/author/delete_category.php' );
         break;
     }
     case 'home':{
@@ -58,6 +58,8 @@ switch( $action ) {
  
     }
     default: {
+        $tblTable = "theloai";
+        $data = $con->getAllData($tblTable);
         require_once( 'views/categories/category.php' );
         break;
     }
