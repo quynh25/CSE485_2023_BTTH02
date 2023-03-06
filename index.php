@@ -3,6 +3,8 @@
 include 'models/DBConnection.php';
 include "models/Home.php";
 include "models/Article.php";
+include "models/Category.php";
+
 $db_article = new Article();
 $db_article->connect();
 
@@ -15,7 +17,8 @@ $db-> connect();
 $con = new DB;
 $con->connect();
 
-
+$conn = new Dtbase;
+$conn->connect();
 
 if ( isset( $_GET[ 'controller' ] ) ) {
     $controller = $_GET[ 'controller' ];
@@ -37,6 +40,9 @@ switch( $controller ) {
     }
     case 'member':{
         require_once('controllers/MemberController.php');
+    }
+    case 'category':{
+        require_once('controllers/category/index.php');
     }
 }
 
