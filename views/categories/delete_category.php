@@ -1,24 +1,31 @@
 <?php
 require_once('views/layouts/header_admin.php');
 ?>
-
-<main class="container">
-    <form action="" method="post"
-        style="width: 50%; background: #3d456a2e; border: 1px solid; border-radius: 10px; margin: 60px auto; padding: 30px;">
-        <h3 style="margin-bottom: 30px">
-            <?php 
-            if (!isset($_GET['list_id'])) echo "Bạn có chắc muốn xóa sản phẩm này không"; 
-            else echo "Bạn cần xóa các bài biết có mã là: ".$_GET['list_id']." trước khi xóa thể loại có mã = ".$_GET['id']; 
+<main class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm">
+            <h3 class="text-center text-uppercase fw-bold">Xoá thể loại</h3>
+            <form action="" method="post"
+                style="width: 50%; background: #3d456a2e; border: 1px solid; border-radius: 10px; margin: 60px auto; padding: 30px;">
+                </h3>
+                <div>
+                    <h4 style="text-align:center;">Bạn có chắc chắn muốn xóa thể loại này?</h4>
+                    <div class="form-group format-button" style="display: flex; justify-content: center; align-items: center;">
+                        <div>
+                            <input class="btn btn-danger" type="submit" name="delete" value="Xóa" >
+                            <a href="index.php?controller=category&action=home" class="btn btn-warning" >Quay lại</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <?php
+                if(isset($thanhcong)&&in_array('del_success',$thanhcong)){
+                    echo "<p style='color: green; text-align: center'>Xóa thành công.</p>";
+                }
             ?>
-        </h3>
-        <div>
-            <a href="?controller=article" class="btn btn-success" style="display: <?php if (!isset($_GET['list_id'])) echo 'none' ?>;">quay lại trang quản lý bài viết</a>
-            <input class="btn btn-danger" type="submit" name='confirm' value="xóa" style="display: <?php if (isset($_GET['list_id'])) echo 'none' ?>;">
-            <a href="?controller=category" class="btn btn-warning" >quay lại</a>
         </div>
-    </form>
+    </div>
 </main>
-
 <?php
 require_once('views/layouts/footer.php');
 ?>
