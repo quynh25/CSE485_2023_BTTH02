@@ -13,7 +13,7 @@ require_once('views/layouts/header_admin.php');
 
                     <div class="form-group  float-end ">
                         <input type="submit" class="btn btn-success" name="insert" value="Thêm">
-                        <a href="index.php?controller=author&action=home" class="btn btn-warning ">Quay lại</a>
+                        <a href="index.php?controller=category&action=home" class="btn btn-warning ">Quay lại</a>
                     </div>
                     
                 </form>

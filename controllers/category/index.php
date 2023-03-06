@@ -15,7 +15,7 @@ switch( $action ) {
         if(isset($_POST['insert'])){
             $tentloai = $_POST['txtName'];
 
-            if($con->insertData($tentloai)){
+            if($con->insertTL($tentloai)){
                 $thanhcong[] = 'add_success';
             }
         }
@@ -30,7 +30,7 @@ switch( $action ) {
         if(isset($_POST['update'])){
             $tentloai = $_POST['txtName'];
 
-            if($con->updateData($id,$tentloai)){
+            if($con->updateTL($id,$tentloai)){
                 $thanhcong[] = 'update_success';
                 
                 $tblTable = "tloai WHERE ma_tloai= '$id'";
@@ -43,11 +43,11 @@ switch( $action ) {
     case 'del': {
         if(isset($_POST['delete'])){
             $matloai = $_GET['id'];
-            if($con->deleteData($matloai)){
+            if($con->deleteTL($matloai)){
                 $thanhcong[] = 'del_success';
             }
         }
-        require_once( 'views/author/delete_category.php' );
+        require_once( 'views/categories/delete_category.php' );
         break;
     }
     case 'home':{
