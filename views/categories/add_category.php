@@ -18,7 +18,7 @@ require_once('views/layouts/header_admin.php');
                     
                 </form>
                 <?php
-                if(isset($thanhcong)&&in_array('add_success',$thanhcong)){
+                if(isset($thanhcong)&&in_array('update_success',$thanhcong)){
                     echo "<p style='color: green; text-align: center'>Thêm mới thành công.</p>";
                 }
                 ?>
