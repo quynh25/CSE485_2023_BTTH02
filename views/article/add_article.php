@@ -19,7 +19,10 @@
                $sql_tgia = "select * from tacgia";
                $result_tgia = $conn->query($sql_tgia);
                
-            
+            //    $article = new Article();
+            //    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
+            //         $inser_article = $article->Insertdata($_POST,$_FILE);
+            //    }
           ?>    
 
             <div class="col-sm">
