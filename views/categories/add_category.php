@@ -4,20 +4,16 @@ require_once('views/layouts/header_admin.php');
     <main class="container mt-5 mb-5">
         <div class="row">
             <div class="col-sm">
-                <h3 class="text-center text-uppercase fw-bold">Thêm mới tác giả</h3>
+                <h3 class="text-center text-uppercase fw-bold">Thêm mới thể loại</h3>
                 <form action="" method="POST">
                     <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblCatName">Tên tác giả</span>
+                        <span class="input-group-text" id="lblCatName">Tên thể loại</span>
                         <input type="text" class="form-control" name="txtName" >
-                    </div>
-                    <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblCatName">Ảnh tác giả</span>
-                        <input type="text" class="form-control" name="txtLink" >
                     </div>
 
                     <div class="form-group  float-end ">
                         <input type="submit" class="btn btn-success" name="insert" value="Thêm">
-                        <a href="index.php?controller=author&action=home" class="btn btn-warning ">Quay lại</a>
+                        <a href="index.php?controller=category&action=home" class="btn btn-warning ">Quay lại</a>
                     </div>
                     
                 </form>

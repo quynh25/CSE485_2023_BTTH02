@@ -13,54 +13,54 @@ $thanhcong = array();
 switch( $action ) {
     case 'add': {
         if(isset($_POST['insert'])){
-            $tentgia = $_POST['txtName'];
-            $hinhtgia = $_POST['txtLink'];
+            $tentloai = $_POST['txtName'];
 
-            if($con->insertData($tentgia,$hinhtgia)){
+            if($con->insertTL($tentloai)){
                 $thanhcong[] = 'add_success';
             }
         }
-        require_once( 'views/author/add_author.php' );
+        require_once( 'views/categories/add_category.php' );
         break;
     }
     case 'edit': {
         $id = $_GET['id'];
-        $tblTable = "tacgia WHERE ma_tgia= '$id'";
+        $tblTable = "tacgia WHERE ma_tloai= '$id'";
         $data = $con->getAllData($tblTable);
 
         if(isset($_POST['update'])){
-            $tentgia = $_POST['txtName'];
-            $hinhtgia = $_POST['txtLink'];
+            $tentloai = $_POST['txtName'];
 
-            if($con->updateData($id,$tentgia,$hinhtgia)){
+            if($con->updateTL($id,$tentloai)){
                 $thanhcong[] = 'update_success';
                 
-                $tblTable = "tacgia WHERE ma_tgia= '$id'";
+                $tblTable = "tloai WHERE ma_tloai= '$id'";
                 $data = $con->getAllData($tblTable);
             }
         }
-        require_once( 'views/author/edit_author.php' );
+        require_once( 'views/categories/edit_category.php' );
         break;
     }
     case 'del': {
         if(isset($_POST['delete'])){
-            $matgia = $_GET['id'];
-            if($con->deleteData($matgia)){
+            $matloai = $_GET['id'];
+            if($con->deleteTL($matloai)){
                 $thanhcong[] = 'del_success';
             }
         }
-        require_once( 'views/author/del_author.php' );
+        require_once( 'views/categories/delete_category.php' );
         break;
     }
     case 'home':{
-        $tblTable = "tacgia";
+        $tblTable = "theloai";
         $data = $con->getAllData($tblTable);
-        require_once( 'views/author/author.php' );
+        require_once( 'views/categories/category.php' );
         break;
  
     }
     default: {
-        require_once( 'views/author/author.php' );
+        $tblTable = "theloai";
+        $data = $con->getAllData($tblTable);
+        require_once( 'views/categories/category.php' );
         break;
     }
 
