@@ -26,12 +26,12 @@
                     </thead>
                     <tbody>
                          <?php
-                        
+                            $i = 1;
                             foreach($data as $value){
 
                          ?>
                               <tr>
-                                   <th scope="row"><?php echo $value['ma_bviet'] ?></th>
+                                   <th scope="row"><?php echo $i++; ?></th>
                                    <td ><?php echo $value['tieude']; ?></td>
                                    <td><?php echo $value['ten_bhat']; ?></td>
                                    <td><?php echo $value['ten_tloai']; ?></td>

@@ -13,7 +13,7 @@
                     <div class="form-group format-button" style="display: flex; justify-content: center; align-items: center;">
                         <div>
                             <input class="btn btn-danger" type="submit" name="delete" value="Xóa" >
-                            <a href="index.php?controller=article&action=list_article" class="btn btn-warning" >Quay lại</a>
+                            <a href="index.php?controller=article&action=list" class="btn btn-warning" >Quay lại</a>
                         </div>
                     </div>
                 </div>

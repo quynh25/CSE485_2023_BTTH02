@@ -42,6 +42,12 @@
             $id = $_GET['id'];
             $tblTable = "baiviet WHERE ma_bviet= '$id'";
             $data = $db_article->getAllData($tblTable);
+            
+            $sql_tloai = "theloai";
+            $result_tloai = $db_article->getAllData($sql_tloai);
+
+            $sql_tgia = "tacgia";
+            $result_tgia = $db_article->getAllData($sql_tgia);
 
             if(isset($_POST['update'])){
                 $tieude = $_POST['tieude'];
