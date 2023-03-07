@@ -75,8 +75,8 @@
 
                     <div class="form-group  float-end ">
                          <!-- <button name = "sbm" class="btn btn-success">Thêm</button> -->
-                        <input href="index.php?controller=article&action=list_article" type="submit" name = "add_article" value="Thêm" class="btn btn-success">
-                        <a href="index.php?controller=article&action=list_article" class="btn btn-warning ">Quay lại</a>
+                        <input href="index.php?controller=article&action=list" type="submit" name = "add_article" value="Thêm" class="btn btn-success">
+                        <a href="index.php?controller=article&action=list" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
                 <?php

@@ -6,38 +6,55 @@ require_once('views/layouts/header_admin.php');
         <div class="row">
             <?php
                 foreach($data as $value){
+
+                }
             ?>
-          <?php
-            
-              
-          ?>   
 
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Sửa bài viết</h3>
-                <form action="add_article.php" method="post" enctype="multipart/form-data">
+                <form action="index.php?controller=article&action=list" method="post" enctype="multipart/form-data">
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tiêu đề</span>
-                        <input type="text" class="form-control" name="tieude" required value="<?php echo $row_update['tieude']; ?>">
+                        <?php
+                        foreach($data as $value){?>
+                            <input type="text" class="form-control" name="tieude" required value="<?php echo $value['tieude']; ?>">
+                        <?php
+                        }
+                        ?>
+                        
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên bài hát</span>
-                        <input type="text" class="form-control" name="tenbhat" required value="<?php echo $row_update['ten_bhat'];?>">
+                        <?php
+                        foreach($data as $value){?>
+                            <input type="text" class="form-control" name="tenbhat" required value="<?php echo $value['ten_bhat'];?>">
+                        <?php
+                        }
+                        ?>
+                        
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên thể loại</span>
-                        <select name="matloai" id=""value="<?php echo $row_update['ten_tloai'];?>">
-                              <?php
-                                   while( $row_tloai = $result_tloai->fetch_assoc()){?>
-                                        <option value="<?php echo $row_tloai['ma_tloai']?>"><?php echo $row_tloai['ten_tloai']?></option>
-                                   <?php
-                                   }
-                                   ?>
+                        <select name="matloai" id="" value="<?php echo $value['ten_tloai'];?>">
+                        <?php
+                        foreach($result_tloai as $value){
+                        ?>
+                            <option value="<?php echo $value['ma_tloai'];?>"><?php echo $value['ten_tloai'];?></option>
+                        <?php
+                        }
+                        ?>
                              
                         </select>
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tóm tắt</span>
-                        <input type="text" class="form-control" name="tomtat" required value="<?php echo $row_update['tomtat'];?>">
+                        <?php
+                        foreach($data as $value){?>
+                             <input type="text" class="form-control" name="tomtat" required value="<?php echo $value['tomtat'];?>">
+                        <?php
+                        }
+                        ?>
+                       
                         <!-- <div type="text"id="tomtat"name="tomtat"class="form-control"></div> -->
                         <!-- <script>
                             ClassicEditor
@@ -49,7 +66,13 @@ require_once('views/layouts/header_admin.php');
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Nội dung</span>
-                        <input type="text" class="form-control" name="noidung"  value="<?php echo $row_update['noidung'];?>">
+                        <?php
+                        foreach($data as $value){?>
+                            <input type="text" class="form-control" name="noidung"  value="<?php echo $value['noidung'];?>">
+                        <?php
+                        }
+                        ?>
+                        
                         <!-- <div id="noidung"name="noidung" class="form-control"></div> -->
                         <!-- <script>
                             ClassicEditor
@@ -61,35 +84,48 @@ require_once('views/layouts/header_admin.php');
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên tác giả</span>
-                        <select name="matgia" id=""value="<?php echo $row_update['ten_tgia'];?>">
-                              <?php
-                                   while( $row_tgia = $result_tgia->fetch_assoc()){?>
-                                        <option value="<?php echo $row_tgia['ma_tgia']?>"><?php echo $row_tgia['ten_tgia']?></option>
-                                   <?php
-                                   }
-                                   ?>
+                        <select name="matgia" id=""value="<?php echo $value['ten_tgia'];?>">
+                        <?php
+                        foreach($result_tgia as $value){
+                        ?>
+                            <option value="<?php echo $value['ma_tgia'];?>"><?php echo $value['ten_tgia'];?></option>
+                        <?php
+                        }
+                        ?>
                              
                        
                         </select>
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Ngày viết</span>
-                        <input type="date" class="form-control" name="ngay" required value="<?php echo $row_update['ngayviet'];?>">
+                        <?php
+                        foreach($data as $value){?>
+                            <input type="date" class="form-control" name="ngayviet" required value="<?php echo $value['ngayviet'];?>">
+                        <?php
+                        }
+                        ?>
+                        
                     </div>
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="name">Hình ảnh</span>
-                        <input type="file" class="form-control" name="anh"  >
+                        <?php
+                        foreach($data as $value){?>
+                            <input type="file" class="form-control" name="hinhanh"  value="<?php echo $value['hinhanh'];?>">
+                        <?php
+                        }
+                        ?>
+                        
                     </div>
 
                     <div class="form-group  float-end ">
                          <!-- <button name = "sbm" class="btn btn-success">Thêm</button> -->
-                        <input type="submit" name = "sbm" value="Sửa" class="btn btn-success">
-                        <a href="index.php?controller=article&action=list_article" class="btn btn-warning ">Quay lại</a>
+                        <input type="submit" name = "sbm" value="Sửa" class="btn btn-success"  >
+                        <a href="index.php?controller=article&action=list" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
             </div>
             <?php
-                }
+                
                 if(isset($thanhcong)&&in_array('update_success',$thanhcong)){
                     echo "<p style='color: green; text-align: center'>Cập nhật thành công.</p>";
                 }
