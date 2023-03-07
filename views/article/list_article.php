@@ -41,10 +41,10 @@
                                    <td><?php echo $value['ngayviet']; ?></td>
                                    <td><img src="<?php echo $value['hinhanh'];?>" class="card-img-top" alt="..."></td>
                                    <td>
-                                        <a href="index.php?controller=article&action=edit&id=<?php echo $row['ma_bviet']?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="index.php?controller=article&action=edit&id=<?php echo $value['ma_bviet']?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                    </td>
                                    <td>
-                                        <a  href="index.php?controller=article&action=delete&id=<?php echo $row['ma_bviet']?>"><i class="fa-solid fa-trash"></i></a>
+                                        <a  href="index.php?controller=article&action=delete&id=<?php echo $value['ma_bviet']?>"><i class="fa-solid fa-trash"></i></a>
                                    </td>
                               </tr>
                          <?php

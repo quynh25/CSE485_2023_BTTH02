@@ -3,15 +3,12 @@
 include 'models/DBConnection.php';
 include "models/Home.php";
 include "models/Article.php";
-<<<<<<< HEAD
-$conn = new Article();
-$conn->connect();
-=======
+// $conn = new Article();
+// $conn->connect();
 include "models/Category.php";
 
 $db_article = new Article();
 $db_article->connect();
->>>>>>> 1530ec7ec30d0b2397ef5164f6b355c364d0b4f8
 
 // $db_article = new Article();
 // $db_article->connect();
