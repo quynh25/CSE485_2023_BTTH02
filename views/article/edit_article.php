@@ -8,45 +8,7 @@ require_once('views/layouts/header_admin.php');
                 foreach($data as $value){
             ?>
           <?php
-            //    $id = $_GET["id"];
-            //    // Bước 01: Kết nối tới DB Server
-            //    $conn = mysqli_connect('localhost','root','','btth01_cse485');
-            //    if(!$conn){
-            //         die('Kết nối tới Server lỗi');
-            //    }
-               // Bước 02: Thực hiện truy vấn
-               $sql_tloai = "select * from theloai";
-               $result_tloai = $conn->query($sql_tloai);
-
-               $sql_tgia = "select * from tacgia";
-               $result_tgia = $conn->query($sql_tgia);
-
-            //    $sql_update =" select * from baiviet where ma_bviet = $id";
-            //    $query_update = $conn->query($sql_update);
-            //    $row_update =$query_update->fetch_assoc();
-            //   if(isset($_POST['sbm'])){
-            //    $tieude= $_POST['tieude'];
-            //    $tenbhat= $_POST['tenbhat'];
-            //    $matloai= $_POST['matloai'];
-            //    $tomtat= $_POST['tomtat'];
-            //    $noidung= $_POST['noidung'];
-            //    $matgia= $_POST['matgia'];
-            //    $ngayviet= $_POST['ngay'];
-
-            //    if($_FILES['anh']['name'] == ''){
-            //         $image = $row_update['tieude'];
-            //    }else{
-            //         $image = $row_update['tieude'];
-            //    }
-            //    $hinhanh = $_FILES['anh']['name'];
-            // //    $hinhanh_tmp = $_FILES['anh']['tmp_name'];
-
-            //    $sql = "update `baiviet` set (tieude = '$tieude',tenbhat= '$tenbhat', matloai='$matloai', tomtat='$tomtat', noidung='$noidung',matgia='$matgia',ngay='$ngayviet',anh='$hinhanh'";
-
-            //    $query = mysqli_query($conn,$sql);
-            // //    move_uploaded_file($hinhanh_tmp,'./images/songs/'.$hinhanh);
-            //    header('Location: article.php');
-            //   }
+            
               
           ?>   
 

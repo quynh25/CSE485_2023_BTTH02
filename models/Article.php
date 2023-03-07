@@ -31,29 +31,33 @@ class Article {
     //phương thức lấy dữ liệu
 
     public function getData() {
-        // $sql = "SELECT * FROM $table";
-        // $this->execute($sql)
-
+    
         if ( $this->result ) {
             $data = mysqli_fetch_array( $this->result );
         } else {
             $data = 0;
         }
-        return data;
+        return $data;
     }
 
     //phương thức lấy toàn bộ dữ liệu
 
-    public function getAllData() {
+    public function getAllData($table) {
+        $sql = "SELECT * FROM $table ";
+        $this->execute($sql);
+
         if ( !$this->result ) {
             $data = 0;
         } else {
-            while( $data = $this->getData() ) {
+            while( $datas = $this->getData() ) {
                 $data[] = $datas;
+
             }
         }
         return $data;
     }
+    
+    
     //Phương thức thêm dữ liệu
 
     public function InsertData($ma_bviet ,$tieude, $ten_bhat, $ma_tloai, $tomtat, $noidung, $ma_tgia, $ngayviet, $hinhanh ) {

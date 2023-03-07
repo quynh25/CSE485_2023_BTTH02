@@ -5,26 +5,6 @@
     <main class="container mt-5 mb-5">
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
-
-           <?php
-               // Bước 01: Kết nối tới DB Server
-               $conn = mysqli_connect('localhost','root','','btth02_cse485');
-               if(!$conn){
-                    die('Kết nối tới Server lỗi');
-               }
-               // Bước 02: Thực hiện truy vấn
-               $sql_tloai = "select * from theloai";
-               $result_tloai = $conn->query($sql_tloai);
-
-               $sql_tgia = "select * from tacgia";
-               $result_tgia = $conn->query($sql_tgia);
-               
-            //    $article = new Article();
-            //    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
-            //         $inser_article = $article->Insertdata($_POST,$_FILE);
-            //    }
-          ?>    
-
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới bài viết</h3>
                 <form action="" method="post" enctype="multipart/form-data">
@@ -39,13 +19,13 @@
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên thể loại</span>
                         <select name="matloai" id="">
-                              <?php
-                                   while( $row_tloai = $result_tloai->fetch_assoc()){?>
-                                        <option value="<?php echo $row_tloai['ma_tloai']?>"><?php echo $row_tloai['ten_tloai']?></option>
-                                   <?php
-                                   }
-                                   ?>
-                             
+                        <?php
+                        foreach($result_tloai as $value){
+                        ?>
+                            <option value="<?php echo $value['ma_tloai'];?>"><?php echo $value['ten_tloai'];?></option>
+                        <?php
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="input-group mt-3 mb-3">
@@ -75,14 +55,13 @@
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên tác giả</span>
                         <select name="matgia" id="">
-                              <?php
-                                   while( $row_tgia = $result_tgia->fetch_assoc()){?>
-                                        <option value="<?php echo $row_tgia['ma_tgia']?>"><?php echo $row_tgia['ten_tgia']?></option>
-                                   <?php
-                                   }
-                                   ?>
-                             
-                       
+                        <?php
+                        foreach($result_tgia as $value){
+                        ?>
+                            <option value="<?php echo $value['ma_tgia'];?>"><?php echo $value['ten_tgia'];?></option>
+                        <?php
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="input-group mt-3 mb-3">
