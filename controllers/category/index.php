@@ -1,7 +1,4 @@
 <?php
-// include "models/DBConnection.php";
-
-
 if ( isset( $_GET[ 'action' ] ) ) {
     $action = $_GET[ 'action' ];
 } else {
@@ -15,7 +12,7 @@ switch( $action ) {
         if(isset($_POST['insert'])){
             $tentloai = $_POST['txtName'];
 
-            if($con->insertTL($tentloai)){
+            if($conn->insertTL($tentloai)){
                 $thanhcong[] = 'add_success';
             }
         }
@@ -24,17 +21,17 @@ switch( $action ) {
     }
     case 'edit': {
         $id = $_GET['id'];
-        $tblTable = "tacgia WHERE ma_tloai= '$id'";
-        $data = $con->getAllData($tblTable);
+        $tblTable = "theloai WHERE ma_tloai= '$id'";
+        $data = $conn->getAllData($tblTable);
 
         if(isset($_POST['update'])){
             $tentloai = $_POST['txtName'];
 
-            if($con->updateTL($id,$tentloai)){
+            if($conn->updateTL($id,$tentloai)){
                 $thanhcong[] = 'update_success';
                 
-                $tblTable = "tloai WHERE ma_tloai= '$id'";
-                $data = $con->getAllData($tblTable);
+                $tblTable = "theloai WHERE ma_tloai= '$id'";
+                $data = $conn->getAllData($tblTable);
             }
         }
         require_once( 'views/categories/edit_category.php' );
@@ -43,7 +40,7 @@ switch( $action ) {
     case 'del': {
         if(isset($_POST['delete'])){
             $matloai = $_GET['id'];
-            if($con->deleteTL($matloai)){
+            if($conn->deleteTL($matloai)){
                 $thanhcong[] = 'del_success';
             }
         }
@@ -52,14 +49,14 @@ switch( $action ) {
     }
     case 'home':{
         $tblTable = "theloai";
-        $data = $con->getAllData($tblTable);
+        $data = $conn->getAllData($tblTable);
         require_once( 'views/categories/category.php' );
         break;
  
     }
     default: {
         $tblTable = "theloai";
-        $data = $con->getAllData($tblTable);
+        $data = $conn->getAllData($tblTable);
         require_once( 'views/categories/category.php' );
         break;
     }

@@ -42,9 +42,11 @@ switch( $controller ) {
     }
     case 'member':{
         require_once('controllers/MemberController.php');
+        break;
     }
     case 'category':{
         require_once('controllers/category/index.php');
+        break;
     }
 }
 
